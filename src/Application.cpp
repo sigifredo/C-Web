@@ -27,18 +27,18 @@ Application::Application()
 {
     std::string requesMethod(std::getenv("REQUEST_METHOD"));
 
-    if (requesMethod.compare("GET"))
+    if (requesMethod.compare("GET") == 0)
         _eRequestMethod = GET;
-    else if (requesMethod.compare("HEAD"))
+    else if (requesMethod.compare("HEAD") == 0)
         _eRequestMethod = HEAD;
-    else if (requesMethod.compare("POST"))
+    else if (requesMethod.compare("POST") == 0)
         _eRequestMethod = POST;
-    else if (requesMethod.compare("PUT"))
+    else if (requesMethod.compare("PUT") == 0)
         _eRequestMethod = PUT;
-    else if (requesMethod.compare("DELETE"))
+    else if (requesMethod.compare("DELETE") == 0)
         _eRequestMethod = DELETE;
-    else if (requesMethod.compare("TRACE"))
+    else if (requesMethod.compare("TRACE") == 0)
         _eRequestMethod = TRACE;
-    else if (requesMethod.compare("CONNECT"))
+    else if (requesMethod.compare("CONNECT") == 0)
         _eRequestMethod = CONNECT;
 }
