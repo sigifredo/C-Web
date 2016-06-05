@@ -22,7 +22,7 @@
 class Application
 {
 public:
-    enum RequestMethod { GET, POST };
+    enum RequestMethod { GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT };
 
     Application();
 

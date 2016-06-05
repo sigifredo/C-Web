@@ -29,6 +29,16 @@ Application::Application()
 
     if (requesMethod.compare("GET"))
         _eRequestMethod = GET;
+    else if (requesMethod.compare("HEAD"))
+        _eRequestMethod = HEAD;
     else if (requesMethod.compare("POST"))
         _eRequestMethod = POST;
+    else if (requesMethod.compare("PUT"))
+        _eRequestMethod = PUT;
+    else if (requesMethod.compare("DELETE"))
+        _eRequestMethod = DELETE;
+    else if (requesMethod.compare("TRACE"))
+        _eRequestMethod = TRACE;
+    else if (requesMethod.compare("CONNECT"))
+        _eRequestMethod = CONNECT;
 }
