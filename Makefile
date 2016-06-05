@@ -1,6 +1,6 @@
 
 
-all: env get hello
+all: env get hello uploadfile
 
 dir:
 	mkdir -p build
@@ -19,3 +19,7 @@ get: dir
 hello: dir
 	g++ -o build/hello.cgi src/hello.cpp
 	strip build/hello.cgi
+
+uploadfile: dir
+	g++ -std=c++11 -o build/uploadfile.cgi src/uploadfile.cpp
+	strip build/uploadfile.cgi
