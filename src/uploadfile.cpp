@@ -19,22 +19,27 @@
 
 int main ()
 {
-    std::printf("Content-type:text/html\r\n\r\n");
+    std::printf("Content-type:text/plain\r\n\r\n");
     std::printf(HTML_HEADER);
 
     std::string requestType(std::getenv("REQUEST_METHOD"));
 
     if (requestType.compare("POST") == 0 || requestType.compare("post") == 0)
     {
-        char * clen = std::getenv("CONTENT_LENGTH");
-        long len = std::strtol(clen, nullptr, 10);
+        long len = std::strtol(std::getenv("CONTENT_LENGTH"), nullptr, 10);
         char * data = new char[len+1];
+
+        std::printf("CONTENT_LENGTH: %d\n", len);
 
         if (std::fgets(data, len+1, stdin))
         {
-            FILE * tmpfile = std::tmpfile();
-            std::fputs(data, tmpfile);
-            std::fclose(tmpfile);
+            // FILE * tmpfile = std::tmpfile();
+            // std::fputs(data, tmpfile);
+
+            for (int i = 0; i < len+1; i++)
+                std::printf("0x%x, ", data[i]);
+
+            // std::fclose(tmpfile);
         }
 
         delete [] data;
